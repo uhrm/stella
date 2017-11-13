@@ -56,8 +56,11 @@ void TiaOutputWidget::loadConfig()
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-void TiaOutputWidget::saveSnapshot()
+void TiaOutputWidget::saveSnapshot(int execDepth)
 {
+  if (execDepth > 0) {
+    drawWidget(false);
+  }
   int number = int(instance().getTicks() / 1000);
   ostringstream sspath;
   sspath << instance().snapshotSaveDir()
@@ -78,7 +81,9 @@ void TiaOutputWidget::saveSnapshot()
   {
     message = e.what();
   }
-  instance().frameBuffer().showMessage(message);
+  if (execDepth == 0) {
+    instance().frameBuffer().showMessage(message);
+  }
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
