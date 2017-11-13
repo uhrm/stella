@@ -1031,7 +1031,10 @@ void DebuggerParser::executeExec()
   if(file.find_last_of('.') == string::npos)
     file += ".script";
 
-  FilesystemNode node(debugger.myOSystem.defaultSaveDir() + file);
+  FilesystemNode node(file);
+  if (!node.exists()) {
+    node = FilesystemNode(debugger.myOSystem.defaultSaveDir() + file);
+  }
   execDepth++;
   commandResult << exec(node);
   execDepth--;
