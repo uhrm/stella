@@ -126,6 +126,7 @@ class DebuggerParser
     uInt32 argCount;
 
     uInt32 execDepth;
+    string execPrefix;
 
     StringList myWatches;
 
