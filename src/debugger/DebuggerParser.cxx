@@ -1517,16 +1517,16 @@ void DebuggerParser::executeReset()
 {
   debugger.reset();
   debugger.rom().invalidate();
-  debugger.riotDebug().controller(Controller::Left).set(Controller::One, 0);
-  debugger.riotDebug().controller(Controller::Left).set(Controller::Two, 0);
-  debugger.riotDebug().controller(Controller::Left).set(Controller::Three, 0);
-  debugger.riotDebug().controller(Controller::Left).set(Controller::Four, 0);
-  debugger.riotDebug().controller(Controller::Left).set(Controller::Six, 0);
-  debugger.riotDebug().controller(Controller::Right).set(Controller::One, 0);
-  debugger.riotDebug().controller(Controller::Right).set(Controller::Two, 0);
-  debugger.riotDebug().controller(Controller::Right).set(Controller::Three, 0);
-  debugger.riotDebug().controller(Controller::Right).set(Controller::Four, 0);
-  debugger.riotDebug().controller(Controller::Right).set(Controller::Six, 0);
+  debugger.riotDebug().controller(Controller::Left).set(Controller::One, 1);
+  debugger.riotDebug().controller(Controller::Left).set(Controller::Two, 1);
+  debugger.riotDebug().controller(Controller::Left).set(Controller::Three, 1);
+  debugger.riotDebug().controller(Controller::Left).set(Controller::Four, 1);
+  debugger.riotDebug().controller(Controller::Left).set(Controller::Six, 1);
+  debugger.riotDebug().controller(Controller::Right).set(Controller::One, 1);
+  debugger.riotDebug().controller(Controller::Right).set(Controller::Two, 1);
+  debugger.riotDebug().controller(Controller::Right).set(Controller::Three, 1);
+  debugger.riotDebug().controller(Controller::Right).set(Controller::Four, 1);
+  debugger.riotDebug().controller(Controller::Right).set(Controller::Six, 1);
   commandResult << "reset system";
 }
 
